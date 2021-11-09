@@ -1,5 +1,10 @@
 package AnthonyWeek5;
 
+import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -7,6 +12,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class HangMan2 {
+    static String line32;
     public static void main(String[] args) throws IOException {
         greeting();
         FileReader fileReader;
@@ -23,9 +29,10 @@ public class HangMan2 {
             fileReader = new FileReader("src/AnthonyWeek5/Words.txt");
             reader = new BufferedReader(fileReader);
             String lineIn = reader.readLine();
-            String line32 = Files.readAllLines(Paths.get("src/AnthonyWeek5/Words.txt")).get(randomState);
+            line32 = Files.readAllLines(Paths.get("src/AnthonyWeek5/Words.txt")).get(randomState);
             reader.close();
-            System.out.println(line32);
+            System.out.println(line32); // safety check
+            availableLetters(line32);
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -53,6 +60,25 @@ public class HangMan2 {
     public static void retrieveScore (String userName){
         //if highScore.contains(userName)
         //.get line #2 of high score
+    }
+
+    public static void availableLetters(String stateName){
+        Border border = new LineBorder(Color.RED, 13);
+        Border border2 = new LineBorder(Color.decode("#03fc98"), 13);
+
+        JFrame instructions = new JFrame();
+        JButton theRules = new JButton(stateName);
+        theRules.setBorder(border);
+        instructions.setVisible(true);
+        instructions.setLocation(0,0);
+        instructions.setSize(390, 300);
+        theRules.setBackground(Color.BLUE);
+        theRules.setForeground(Color.WHITE);
+        theRules.setBounds(5, 5, 50, 30);
+        theRules.setFont(new Font("Arial", Font.PLAIN, 16));
+        instructions.add(theRules);
+        instructions.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        instructions.setExtendedState(JFrame.ICONIFIED);
     }
 
 }
