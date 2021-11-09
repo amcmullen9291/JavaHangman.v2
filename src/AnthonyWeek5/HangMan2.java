@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class HangMan2 {
     static String line32;
-    static Letters letters;
+    static Letters letters = new Letters();
     static Round round;
 
     public static void main(String[] args) throws IOException {
@@ -23,7 +23,7 @@ public class HangMan2 {
             int low = 1;
             int high = 20;
             int randomState = r.nextInt(high-low) + low;
-
+            letters.letters();
             fileReader = new FileReader("src/AnthonyWeek5/Words.txt");
             reader = new BufferedReader(fileReader);
             String lineIn = reader.readLine();
