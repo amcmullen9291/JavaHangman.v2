@@ -37,7 +37,13 @@ public class HangMan2 {
         System.out.println("Enter your name to begin.");
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
-        System.out.println("Hello, " + userInput.substring(0, 1).toUpperCase() + userInput.substring(1));
+        String userName = userInput.substring(0, 1).toUpperCase() + userInput.substring(1);
+        System.out.println("Hello, " + userName);
+        returnPlayer(userName);
+    }
+
+    public static void returnPlayer(String userName){
+        System.out.println("checking the GuestBooks ... " );
     }
 
 }
