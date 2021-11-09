@@ -17,7 +17,7 @@ public class HangMan2 {
 //            ArrayList<String> statesList = new ArrayList<String>();
             Random r = new Random();
             int low = 1;
-            int high = 50;
+            int high = 20;
             int randomState = r.nextInt(high-low) + low;
 
             fileReader = new FileReader("src/AnthonyWeek5/Words.txt");
@@ -31,7 +31,7 @@ public class HangMan2 {
         }
     }
 
-    public static void greeting(){
+    public static void greeting() throws IOException {
         System.out.println("Java HangMan v2");
         System.out.println();
         System.out.println("Enter your name to begin.");
@@ -42,10 +42,12 @@ public class HangMan2 {
         returnPlayer(userName);
     }
 
-    public static void returnPlayer(String userName){
+    public static void returnPlayer(String userName) throws IOException {
         System.out.println("checking the GuestBooks ... " );
-        //search for userName.toCaps return true
-        //or create user and return false;
+        System.out.println(userName);
+        File file = new File("AnthonyWeek5/HighScore.txt");
+//        BufferedWriter newUser = new BufferedWriter(new FileWriter("AnthonyWeek5/HighScore.txt"));
+//        BufferedReader returnGuest = new BufferedReader(new FileReader("AnthonyWeek5/HighScore.txt"));
     }
 
     public static void retrieveScore (String userName){
