@@ -1,39 +1,48 @@
 package AnthonyWeek5;
 
 import javax.swing.*;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 public class Letters extends JPanel {
     static Letters letters;
-    JFrame frame;
-    JButton nextButton = new JButton ("Next Screen");
-    Border border = new LineBorder(Color.RED, 13);
+    static JFrame frame;
     static JPanel dynamicLetters;
     static JPanel dynamicLetters2;
 
+
     public void letters() {
-        frame = new JFrame("BattleShip v2- available letters");
-        frame.setVisible(true);
-        frame.setSize(390, 300);
-        frame.setLocation(5,10);
+//        frame = new JFrame("BattleShip v2- available letters");
+////        frame.setVisible(true);
+//        frame.setSize(390, 300);
+//        frame.setLocation(5,10);
         dynamicLetters = new JPanel();
         dynamicLetters2 = new JPanel();
-        dynamicLetters.setBounds(5, 10, 390, 300);
-        dynamicLetters2.setBounds(5, 10, 390, 300);
-        dynamicLetters.setBackground(Color.YELLOW);
-        dynamicLetters.setForeground(Color.BLACK);
+        dynamicLetters.setBounds(5, 10, 390, 150);
+        dynamicLetters2.setBounds(5, 150, 390, 300);
+        dynamicLetters.setBackground(Color.WHITE);
+        dynamicLetters.setForeground(Color.WHITE);
         dynamicLetters.setFont(new Font("Arial", Font.PLAIN, 38));
-        dynamicLetters2.setBackground(Color.YELLOW);
-        dynamicLetters2.setForeground(Color.BLACK);
+        dynamicLetters2.setBackground(Color.WHITE);
+        dynamicLetters2.setForeground(Color.WHITE);
         dynamicLetters2.setFont(new Font("Arial", Font.PLAIN, 38));
 
         setLayout(new GridLayout());
 
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(dynamicLetters);
-        frame.add(dynamicLetters2);
+        JFrame frame2 = new JFrame("HangMan v2 - available letters");
+        frame2.setVisible(true);
+        frame2.setSize(400, 300);
+        frame2.setResizable(true);
+        frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(2, 1));
+        panel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        panel.setBackground(Color.BLUE);
+        frame2.add(panel);
+        panel.add(dynamicLetters);
+        panel.add(dynamicLetters2);
+        frame2.setVisible(true);
     }
 
     public static void availableLetters(String stateName){
@@ -52,6 +61,20 @@ public class Letters extends JPanel {
         dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"L"+"</span></html>"));
         dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"M"+"</span></html>"));
  //@ get second row started
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"N"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"O"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"P"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"Q"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"R"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"S"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"T"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"U"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"V"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"W"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"X"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"Y"+"</span></html>"));
+        dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"Z"+"</span></html>"));
+
     }
 
 }
