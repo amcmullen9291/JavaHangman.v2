@@ -3,14 +3,12 @@ package AnthonyWeek5;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class HangMan2 {
     public static void main(String[] args) throws IOException {
+        greeting();
         FileReader fileReader;
         BufferedReader reader;
 
@@ -32,5 +30,15 @@ public class HangMan2 {
             e.printStackTrace();
         }
     }
+
+    public static void greeting(){
+        System.out.println("Java HangMan v2");
+        System.out.println();
+        System.out.println("Enter your name to begin.");
+        Scanner scanner = new Scanner(System.in);
+        String userInput = scanner.nextLine();
+        System.out.println("Welcome back, " + userInput.substring(0, 1).toUpperCase() + userInput.substring(1));
+    }
+
 }
 
