@@ -44,6 +44,13 @@ public class HangMan2 {
 
     public static void returnPlayer(String userName){
         System.out.println("checking the GuestBooks ... " );
+        //search for userName.toCaps return true
+        //or create user and return false;
+    }
+
+    public static void retrieveScore (String userName){
+        //if highScore.contains(userName)
+        //.get line #2 of high score
     }
 
 }
