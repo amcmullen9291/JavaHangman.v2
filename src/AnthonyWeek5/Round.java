@@ -1,15 +1,19 @@
 package AnthonyWeek5;
 
+import javax.swing.*;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static javax.swing.JLabel.*;
+
 public class Round {
 
     static String userName;
     static int score;
+    static Letters lettersClass;
 
     public void round(String userName, int score ){
         this.userName = userName;
@@ -32,7 +36,6 @@ public class Round {
     }
 
     public static void beginGame(String secretWord){
-        System.out.println("Your Word:");
         char[] letters = new char[secretWord.length()];
         Arrays.fill(letters, '_');
         System.out.println(letters);
@@ -70,6 +73,8 @@ public class Round {
                     for (int x = 0; x < secretWord.length(); x++) {
                         if (secretWord.charAt(x) == letter) {
                             letters[x] = letter;
+                            //add chosenLetter(
+                            lettersClass.chosenLetter(); //placeholder need to convert char to JLabel identifier
                             System.out.println(letters);
                             System.out.println(" ");
                             isCorrect = true;
