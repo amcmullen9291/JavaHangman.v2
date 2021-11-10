@@ -9,6 +9,7 @@ public class Letters extends JPanel {
     static JFrame frame;
     static JPanel dynamicLetters;
     static JPanel dynamicLetters2;
+    static JPanel solution;
 
 
     public void letters() {
@@ -18,14 +19,18 @@ public class Letters extends JPanel {
 //        frame.setLocation(5,10);
         dynamicLetters = new JPanel();
         dynamicLetters2 = new JPanel();
+        solution = new JPanel();
         dynamicLetters.setBounds(5, 10, 390, 150);
-        dynamicLetters2.setBounds(5, 150, 390, 300);
+        dynamicLetters2.setBounds(5, 100, 390, 100);
+        solution.setBounds(5, 250, 390, 50);
+
         dynamicLetters.setBackground(Color.WHITE);
         dynamicLetters.setForeground(Color.WHITE);
         dynamicLetters.setFont(new Font("Arial", Font.PLAIN, 38));
         dynamicLetters2.setBackground(Color.WHITE);
         dynamicLetters2.setForeground(Color.WHITE);
         dynamicLetters2.setFont(new Font("Arial", Font.PLAIN, 38));
+        solution.setBackground(Color.YELLOW);
 
         setLayout(new GridLayout());
 
@@ -36,12 +41,13 @@ public class Letters extends JPanel {
         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(2, 1));
+        panel.setLayout(new GridLayout(3, 1));
         panel.setBorder(new EmptyBorder(10, 10, 10, 10));
-        panel.setBackground(Color.BLUE);
+        panel.setBackground(Color.GREEN);
         frame2.add(panel);
         panel.add(dynamicLetters);
         panel.add(dynamicLetters2);
+        panel.add(solution);
         frame2.setVisible(true);
     }
 
@@ -74,6 +80,7 @@ public class Letters extends JPanel {
         dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"X"+"</span></html>"));
         dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"Y"+"</span></html>"));
         dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"Z"+"</span></html>"));
+        solution.add(new JLabel("<html><c>"+"Your word has: "+ stateName.length() +" letters"+"</c></html>"));
 
     }
 
