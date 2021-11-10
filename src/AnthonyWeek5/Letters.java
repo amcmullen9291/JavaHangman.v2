@@ -54,19 +54,32 @@ public class Letters extends JPanel {
 
     public static void availableLetters(String stateName){
         System.out.println("Its working; your state is: " + stateName);
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"A"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"B"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"C"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"D"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"E"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"F"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"G"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"H"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"I"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"J"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"K"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"L"+"</span></html>"));
-        dynamicLetters.add(new JLabel("<html><span style='font-size:20px'>"+"M"+"</span></html>"));
+        JLabel A = new JLabel("<html><span style='font-size:20px'>"+"A"+"</span></html>");
+        dynamicLetters.add(A);
+        JLabel B = new JLabel("<html><span style='font-size:20px'>"+"B"+"</span></html>");
+        dynamicLetters.add(B);
+        JLabel C = new JLabel("<html><span style='font-size:20px'>"+"C"+"</span></html>");
+        dynamicLetters.add(C);
+        JLabel D = new JLabel("<html><span style='font-size:20px'>"+"D"+"</span></html>");
+        dynamicLetters.add(D);
+        JLabel E = new JLabel("<html><span style='font-size:20px'>"+"E"+"</span></html>");
+        dynamicLetters.add(E);
+        JLabel F = new JLabel("<html><span style='font-size:20px'>"+"F"+"</span></html>");
+        dynamicLetters.add(F);
+        JLabel G = new JLabel("<html><span style='font-size:20px'>"+"G"+"</span></html>");
+        dynamicLetters.add(G);
+        JLabel H = new JLabel("<html><span style='font-size:20px'>"+"H"+"</span></html>");
+        dynamicLetters.add(H);
+        JLabel I = new JLabel("<html><span style='font-size:20px'>"+"I"+"</span></html>");
+        dynamicLetters.add(I);
+        JLabel J = new JLabel("<html><span style='font-size:20px'>"+"J"+"</span></html>");
+        dynamicLetters.add(J);
+        JLabel K = new JLabel("<html><span style='font-size:20px'>"+"K"+"</span></html>");
+        dynamicLetters.add(K);
+        JLabel L = new JLabel("<html><span style='font-size:20px'>"+"L"+"</span></html>");
+        dynamicLetters.add(L);
+        JLabel M = new JLabel("<html><span style='font-size:20px'>"+"M"+"</span></html>");
+        dynamicLetters.add(M);
  //@ get second row started
         dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"N"+"</span></html>"));
         dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"O"+"</span></html>"));
