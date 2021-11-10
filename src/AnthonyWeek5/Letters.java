@@ -7,6 +7,7 @@ import java.awt.*;
 public class Letters extends JPanel {
     static Letters letters;
     static JFrame frame;
+    static JPanel panel;
     static JPanel dynamicLetters;
     static JPanel dynamicLetters2;
     static JPanel solution;
@@ -40,7 +41,7 @@ public class Letters extends JPanel {
         frame2.setResizable(true);
         frame2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        JPanel panel = new JPanel();
+        panel = new JPanel();
         panel.setLayout(new GridLayout(3, 1));
         panel.setBorder(new EmptyBorder(10, 10, 10, 10));
         panel.setBackground(Color.GREEN);
@@ -81,6 +82,17 @@ public class Letters extends JPanel {
         dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"Y"+"</span></html>"));
         dynamicLetters2.add(new JLabel("<html><span style='font-size:20px'>"+"Z"+"</span></html>"));
         solution.add(new JLabel("<html><c>"+"Your word has: "+ stateName.length() +" letters"+"</c></html>"));
+
+    }
+
+    public static void testPanelRemoval(char chosenLetter){
+        // declare each Alphabet JLabel separately so that it has a specific identifier. Then it can be removed
+        //then, either label.setText("_"); to leave a space in the list, or,
+
+        //Container parent = label7.getParent();
+        //parent.remove(label7);
+        //parent.validate();
+        //parent.repaint(); to completely remove the letter's position from the shown list
 
     }
 
