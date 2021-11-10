@@ -74,7 +74,7 @@ public class Round {
                         if (secretWord.charAt(x) == letter) {
                             letters[x] = letter;
                             //add chosenLetter(
-                            lettersClass.chosenLetter(); //placeholder need to convert char to JLabel identifier
+//                            lettersClass.chosenLetter(); //placeholder need to convert char to JLabel identifier
                             System.out.println(letters);
                             System.out.println(" ");
                             isCorrect = true;
