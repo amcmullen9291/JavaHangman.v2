@@ -9,6 +9,7 @@ import java.io.ByteArrayInputStream;
 public class Letters extends JPanel {
     static Letters letters;
     static JFrame frame;
+    static JFrame frame2;
     static JPanel panel;
     static JPanel dynamicLetters;
     static JPanel dynamicLetters2;
@@ -37,7 +38,7 @@ public class Letters extends JPanel {
 
         setLayout(new GridLayout());
 
-        JFrame frame2 = new JFrame("HangMan v2 - available letters");
+        frame2 = new JFrame("HangMan v2 - available letters");
         frame2.setVisible(true);
         frame2.setSize(400, 300);
         frame2.setResizable(true);
@@ -110,11 +111,23 @@ public class Letters extends JPanel {
         JLabel Z = new JLabel("<html><span style='font-size:20px'>"+"Z"+"</span></html>");
         dynamicLetters2.add(Z);
         solution.add(new JLabel("<html><c>"+"Your word has: "+ stateName.length() +" letters"+"</c></html>"));
+//        chosenLetter('K');
+        System.out.println(K.getText());
     }
 
-    public static void chosenLetter(JLabel letterChoice){
-        letterChoice.setText(" ");
-        }
+//    public static void chosenLetter(char letterChoice){
+//        for (int j=0; j<frame2.getComponents().length; j++){
+//            //if it is a jlabel
+//            if(frame2.getComponent(j) instanceof JLabel) {
+//                JLabel label = (JLabel)frame2.getComponent(j);
+//                String text = label.getText();
+//                System.out.println("Lable's text: " + text);
+//                if(text == "<html><span style='font-size:20px'>"+letterChoice+"</span></html>") {
+//                    label.setText(" ");
+//                 }
+//                }
+//            }
+//        }
 
     }
 
