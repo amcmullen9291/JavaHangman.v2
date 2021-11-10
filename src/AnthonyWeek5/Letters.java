@@ -108,18 +108,10 @@ public class Letters extends JPanel {
         JLabel Z = new JLabel("<html><span style='font-size:20px'>"+"Z"+"</span></html>");
         dynamicLetters2.add(Z);
         solution.add(new JLabel("<html><c>"+"Your word has: "+ stateName.length() +" letters"+"</c></html>"));
-
     }
 
-    public static void testPanelRemoval(char chosenLetter){
-        // declare each Alphabet JLabel separately so that it has a specific identifier. Then it can be removed
-        //then, either label.setText("_"); to leave a space in the list, or,
-
-        //Container parent = label7.getParent();
-        //parent.remove(label7);
-        //parent.validate();
-        //parent.repaint(); to completely remove the letter's position from the shown list
-
+    public static void chosenLetter(JLabel chosenLetter){
+        chosenLetter.setText((" "));
     }
 
 }
