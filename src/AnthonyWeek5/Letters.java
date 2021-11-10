@@ -3,6 +3,8 @@ package AnthonyWeek5;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.beans.XMLDecoder;
+import java.io.ByteArrayInputStream;
 
 public class Letters extends JPanel {
     static Letters letters;
@@ -110,8 +112,9 @@ public class Letters extends JPanel {
         solution.add(new JLabel("<html><c>"+"Your word has: "+ stateName.length() +" letters"+"</c></html>"));
     }
 
-    public static void chosenLetter(JLabel chosenLetter){
-        chosenLetter.setText((" "));
+    public static void chosenLetter(JLabel letterChoice){
+        letterChoice.setText(" ");
+        }
+
     }
 
-}
