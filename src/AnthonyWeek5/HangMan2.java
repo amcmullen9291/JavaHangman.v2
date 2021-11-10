@@ -30,7 +30,9 @@ public class HangMan2 {
             line32 = Files.readAllLines(Paths.get("src/AnthonyWeek5/Words.txt")).get(randomState);
             reader.close();
             System.out.println(line32); // safety check
-            letters.availableLetters(line32);
+            letters.availableLetters(line32); //add startGame(line32);
+            round.beginGame(line32);
+
         }catch(IOException e){
             e.printStackTrace();
         }
