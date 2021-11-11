@@ -188,7 +188,7 @@ public class Round {
         }
         try{
             BufferedWriter recordStreak = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
-            recordStreak.write(gamesWon);
+            recordStreak.write(String.valueOf(gamesWon));
             recordStreak.close();
         }catch (IOException e){
             e.printStackTrace();
