@@ -169,11 +169,10 @@ public class Letters extends JPanel {
     public static void chosenLetter(char letterChoice){
         letterChoice = Character.toUpperCase(letterChoice);
         JLabel placeholder = sortedHash.get(letterChoice);
-        System.out.println("its touching the method." + placeholder);
         placeholder.setText(" ");
-        frame2.remove(placeholder);
-        frame2.validate();
-        frame2.repaint();
+        panel.remove(placeholder);
+        panel.validate();
+        panel.repaint();
         }
 
     }

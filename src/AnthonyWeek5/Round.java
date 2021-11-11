@@ -91,6 +91,7 @@ public class Round {
                     }
                     if (!isCorrect) {
                         --lives;
+                        letterClass.chosenLetter(letter);
                         System.out.println(letters);
                         System.out.println(" ");
                     }
@@ -114,6 +115,7 @@ public class Round {
                         }
                         if (!isCorrect) {
                             --lives;
+                            letterClass.chosenLetter(letter);
                             System.out.println(letters);
                             System.out.println(" ");
                         }
