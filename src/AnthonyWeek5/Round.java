@@ -12,10 +12,10 @@ public class Round {
     static String userName;
     static int score;
     static Letters letterClass;
+    static int gamesWon;
 
-    public void round(String userName, int score ){
-        this.userName = userName;
-//        this.score = 0;
+    public void round(String userNamed ){
+        this.userName = userNamed;
     }
 
     public static void returnPlayer(String userNamed){
@@ -133,6 +133,14 @@ public class Round {
         }
     }
     public static void saveUserScore(int currentScore) throws IOException {
-        System.out.println("placeholder");
+       //int roundScore = 50 points times Hangman2.line23.length()
+       //score += roundScore;
+       //System.out.println("Current Points: " + score);
+        // only .write here; don't fileRead
+        //call gamesWon()
+        }
+
+    public static void totalGamesWon(){
+        //System.out.println("Current streak: " + gamesWon);
         }
     }
