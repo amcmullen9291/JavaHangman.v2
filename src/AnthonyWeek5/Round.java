@@ -189,14 +189,14 @@ public class Round {
             BufferedReader currentGamesWon = new BufferedReader(new FileReader("src/AnthonyWeek5/GamesWon.txt"));
             int currentTotal = Integer.parseInt(currentGamesWon.readLine());
             gamesWon = currentTotal+1;
-                System.out.println("Current streak: " + (currentTotal+1));
+                System.out.println("Current streak: " + (gamesWon));
                 currentGamesWon.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
         }
         try{
             BufferedWriter recordStreak = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
-            recordStreak.write(String.valueOf(gamesWon+1));
+            recordStreak.write(String.valueOf(gamesWon));
             recordStreak.close();
         }catch (IOException e){
             e.printStackTrace();
