@@ -1,7 +1,6 @@
 package AnthonyWeek5;
 
 import java.io.*;
-import java.nio.Buffer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
@@ -154,5 +153,6 @@ public class Round {
 
     public static void totalGamesWon(){
         //System.out.println("Current streak: " + gamesWon);
+        //read from gamesWon.txt and update file after puzzle solved
         }
     }

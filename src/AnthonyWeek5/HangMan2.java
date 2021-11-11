@@ -17,8 +17,6 @@ public class HangMan2 {
         BufferedReader reader;
 
         try {
-//            Scanner s = new Scanner(new File("src/AnthonyWeek5/Words.txt"));
-//            ArrayList<String> statesList = new ArrayList<String>();
             Random r = new Random();
             int low = 1;
             int high = 50;
