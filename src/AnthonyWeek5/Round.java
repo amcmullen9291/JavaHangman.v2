@@ -30,6 +30,7 @@ public class Round {
                     BufferedReader scoreReader = new BufferedReader(new FileReader(file));
                     if (scoreReader.readLine() != null) {
                         score = Integer.parseInt(scoreReader.readLine());
+                        scoreReader.close();
                     }else{
                         score = 0;
                     }
@@ -39,10 +40,26 @@ public class Round {
             }else{
                 try{
                     BufferedWriter resetScore = new BufferedWriter(new FileWriter(file));
-                    resetScore.write(0);
+                    resetScore.write("0");
+                    resetScore.close();
                 }catch(IOException e){
                     e.printStackTrace();
                 }
+                try{
+                    BufferedWriter resetGamesTotal = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
+                    resetGamesTotal.write("0");
+                    resetGamesTotal.close();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+                try{
+                    BufferedWriter resetName = new BufferedWriter(new FileWriter("src/AnthonyWeek5/UserName.txt"));
+                    resetName.write(userNamed);
+                    resetName.close();
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+
             }
         }catch(IOException e){
             e.printStackTrace();
