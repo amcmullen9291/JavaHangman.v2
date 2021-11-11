@@ -11,6 +11,7 @@ public class Round {
 
     static String userName;
     static int score;
+    static Letters letterClass;
 
     public void round(String userName, int score ){
         this.userName = userName;
@@ -78,6 +79,7 @@ public class Round {
                             letters[x] = letter;
                             System.out.println(letters);
                             System.out.println(" ");
+                            letterClass.chosenLetter(letter);
                             isCorrect = true;
                             --lettersLeft;
                             if (lettersLeft == 0) {
@@ -103,6 +105,7 @@ public class Round {
                         for (int x = 0; x < secretWord.length(); x++) {
                             if (secretWord.charAt(x) == letter) {
                                 letters[x] = letter;
+                                letterClass.chosenLetter(letter);
                                 System.out.println(letters);
                                 System.out.println(" ");
                                 isCorrect = true;

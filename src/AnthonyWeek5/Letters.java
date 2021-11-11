@@ -162,12 +162,18 @@ public class Letters extends JPanel {
         sortedLabels[25] = Z;
         sortedHash.put('Z',Z);
         solution.add(new JLabel("<html><c>"+"Your word has: "+ stateName.length() +" letters"+"</c></html>"));
+//        chosenLetter('h');
     }
 
 
     public static void chosenLetter(char letterChoice){
+        letterChoice = Character.toUpperCase(letterChoice);
         JLabel placeholder = sortedHash.get(letterChoice);
+        System.out.println("its touching the method." + placeholder);
         placeholder.setText(" ");
+        frame2.remove(placeholder);
+        frame2.validate();
+        frame2.repaint();
         }
 
     }
