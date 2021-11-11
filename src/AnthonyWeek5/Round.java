@@ -2,6 +2,8 @@ package AnthonyWeek5;
 
 import java.io.*;
 import java.nio.Buffer;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -22,20 +24,30 @@ public class Round {
         userName = userNamed;
         System.out.println("checking the GuestBooks ... " );
         File file = new File("AnthonyWeek5/HighScore.txt");
-        try {
-            BufferedWriter newUser = new BufferedWriter(new FileWriter("src/AnthonyWeek5/UserName.txt"));
-//       BufferedReader returnGuest = new BufferedReader(new FileReader("AnthonyWeek5/HighScore.txt"));
-            newUser.write(userNamed);
-            newUser.close();
+        try{
+            String cachedName = String.valueOf(Files.readAllLines(Paths.get("src/AnthonyWeek5/UserName.txt")));
+            if(userNamed == cachedName){
+                try{
+                    BufferedReader scoreReader = new BufferedReader(new FileReader(file));
+                    if (scoreReader.readLine() != null) {
+                        score = Integer.parseInt(scoreReader.readLine());
+                    }else{
+                        score = 0;
+                    }
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }else{
+                try{
+                    BufferedWriter resetScore = new BufferedWriter(new FileWriter(file));
+                    resetScore.write(0);
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            }
         }catch(IOException e){
             e.printStackTrace();
         }
-    }
-
-    public static void retrieveScore (String userNamed){
-        //if highScore.contains(userName)
-        //.get line #2 of high score
-        userName =userNamed;
     }
 
     public static void beginGame(String secretWord){
@@ -135,9 +147,9 @@ public class Round {
     public static void saveUserScore(int currentScore) throws IOException {
        //int roundScore = 50 points times Hangman2.line23.length()
        //score += roundScore;
-       //System.out.println("Current Points: " + score);
+       //System.out.println("Points this round: " + score);
         // only .write here; don't fileRead
-        //call gamesWon()
+        //call totalGamesWon()
         }
 
     public static void totalGamesWon(){

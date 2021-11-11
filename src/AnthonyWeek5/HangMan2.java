@@ -47,7 +47,6 @@ public class HangMan2 {
         System.out.println("Hello, " + userName);
         round.userName = userInput;
         round.returnPlayer(userName);
-        round.retrieveScore(userName);
     }
 
 }
