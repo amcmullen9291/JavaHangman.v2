@@ -5,6 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.beans.XMLDecoder;
 import java.io.ByteArrayInputStream;
+import java.util.HashMap;
 
 public class Letters extends JPanel {
     static Letters letters;
@@ -14,6 +15,8 @@ public class Letters extends JPanel {
     static JPanel dynamicLetters;
     static JPanel dynamicLetters2;
     static JPanel solution;
+    static JLabel[] sortedLabels = new JLabel[26];
+    static HashMap<Character, JLabel> sortedHash = new HashMap<Character, JLabel>();
 
 
     public void letters() {
@@ -59,61 +62,101 @@ public class Letters extends JPanel {
         System.out.println("Its working; your state is: " + stateName);
         JLabel A = new JLabel("<html><span style='font-size:20px'>"+"A"+"</span></html>");
         dynamicLetters.add(A);
+        sortedLabels[0] = A;
+        sortedHash.put('A',A); //GET VALUE OF KEY -> VAR.SETtEXT(" ");
         JLabel B = new JLabel("<html><span style='font-size:20px'>"+"B"+"</span></html>");
         dynamicLetters.add(B);
+        sortedLabels[1] = B;
+        sortedHash.put('B',B);
         JLabel C = new JLabel("<html><span style='font-size:20px'>"+"C"+"</span></html>");
         dynamicLetters.add(C);
+        sortedLabels[2] = C;
+        sortedHash.put('C',C);
         JLabel D = new JLabel("<html><span style='font-size:20px'>"+"D"+"</span></html>");
         dynamicLetters.add(D);
+        sortedLabels[3] = D;
+        sortedHash.put('D',D);
         JLabel E = new JLabel("<html><span style='font-size:20px'>"+"E"+"</span></html>");
         dynamicLetters.add(E);
+        sortedLabels[4] = E;
+        sortedHash.put('E',E);
         JLabel F = new JLabel("<html><span style='font-size:20px'>"+"F"+"</span></html>");
         dynamicLetters.add(F);
+        sortedLabels[5] = F;
+        sortedHash.put('F',F);
         JLabel G = new JLabel("<html><span style='font-size:20px'>"+"G"+"</span></html>");
         dynamicLetters.add(G);
+        sortedLabels[6] = G;
+        sortedHash.put('G',G);
         JLabel H = new JLabel("<html><span style='font-size:20px'>"+"H"+"</span></html>");
         dynamicLetters.add(H);
+        sortedLabels[7] = H;
+        sortedHash.put('H',H);
         JLabel I = new JLabel("<html><span style='font-size:20px'>"+"I"+"</span></html>");
         dynamicLetters.add(I);
+        sortedLabels[8] = I;
+        sortedHash.put('I',I);
         JLabel J = new JLabel("<html><span style='font-size:20px'>"+"J"+"</span></html>");
         dynamicLetters.add(J);
+        sortedLabels[9] = J;
+        sortedHash.put('J',J);
         JLabel K = new JLabel("<html><span style='font-size:20px'>"+"K"+"</span></html>");
         dynamicLetters.add(K);
+        sortedLabels[10] = K;
+        sortedHash.put('K',K);
         JLabel L = new JLabel("<html><span style='font-size:20px'>"+"L"+"</span></html>");
         dynamicLetters.add(L);
+        sortedLabels[11] = L;
+        sortedHash.put('L',L);
         JLabel M = new JLabel("<html><span style='font-size:20px'>"+"M"+"</span></html>");
         dynamicLetters.add(M);
- //@ get second row started
+        sortedLabels[12] = M;
+        sortedHash.put('M',M);
+        //@ get second row started
         JLabel N = new JLabel("<html><span style='font-size:20px'>"+"N"+"</span></html>");
         dynamicLetters2.add(N);
+        sortedLabels[13] = N;
         JLabel O = new JLabel("<html><span style='font-size:20px'>"+"O"+"</span></html>");
         dynamicLetters2.add(O);
+        sortedLabels[14] = O;
         JLabel P = new JLabel("<html><span style='font-size:20px'>"+"P"+"</span></html>");
         dynamicLetters2.add(P);
+        sortedLabels[15] = P;
         JLabel Q = new JLabel("<html><span style='font-size:20px'>"+"Q"+"</span></html>");
         dynamicLetters2.add(Q);
+        sortedLabels[16] = Q;
         JLabel R = new JLabel("<html><span style='font-size:20px'>"+"R"+"</span></html>");
         dynamicLetters2.add(R);
+        sortedLabels[17] = R;
         JLabel S = new JLabel("<html><span style='font-size:20px'>"+"S"+"</span></html>");
         dynamicLetters2.add(S);
+        sortedLabels[18] = S;
         JLabel T = new JLabel("<html><span style='font-size:20px'>"+"T"+"</span></html>");
         dynamicLetters2.add(T);
+        sortedLabels[19] = T;
         JLabel U = new JLabel("<html><span style='font-size:20px'>"+"U"+"</span></html>");
         dynamicLetters2.add(U);
+        sortedLabels[20] = U;
         JLabel V = new JLabel("<html><span style='font-size:20px'>"+"V"+"</span></html>");
         dynamicLetters2.add(V);
+        sortedLabels[21] = V;
         JLabel W = new JLabel("<html><span style='font-size:20px'>"+"W"+"</span></html>");
         dynamicLetters2.add(W);
+        sortedLabels[22] = W;
         JLabel X = new JLabel("<html><span style='font-size:20px'>"+"X"+"</span></html>");
         dynamicLetters2.add(X);
+        sortedLabels[23] = X;
         JLabel Y = new JLabel("<html><span style='font-size:20px'>"+"Y"+"</span></html>");
         dynamicLetters2.add(Y);
+        sortedLabels[24] = Y;
         JLabel Z = new JLabel("<html><span style='font-size:20px'>"+"Z"+"</span></html>");
         dynamicLetters2.add(Z);
+        sortedLabels[25] = Z;
         solution.add(new JLabel("<html><c>"+"Your word has: "+ stateName.length() +" letters"+"</c></html>"));
-//        chosenLetter('K');
-        System.out.println(K.getText());
+//        System.out.println(Integer.parseInt(String.valueOf(Character.valueOf('A'))));
+
     }
+
 
 //    public static void chosenLetter(char letterChoice){
 //        for (int j=0; j<frame2.getComponents().length; j++){

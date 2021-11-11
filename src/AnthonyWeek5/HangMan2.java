@@ -21,7 +21,7 @@ public class HangMan2 {
 //            ArrayList<String> statesList = new ArrayList<String>();
             Random r = new Random();
             int low = 1;
-            int high = 20;
+            int high = 50;
             int randomState = r.nextInt(high-low) + low;
             letters.letters();
             fileReader = new FileReader("src/AnthonyWeek5/Words.txt");
@@ -45,6 +45,7 @@ public class HangMan2 {
         String userInput = scanner.nextLine();
         String userName = userInput.substring(0, 1).toUpperCase() + userInput.substring(1);
         System.out.println("Hello, " + userName);
+        round.userName = userInput;
         round.returnPlayer(userName);
         round.retrieveScore(userName);
     }
