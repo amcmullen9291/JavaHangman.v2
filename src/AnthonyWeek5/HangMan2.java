@@ -45,7 +45,7 @@ public class HangMan2 {
         String userInput = scanner.nextLine();
         String userName = userInput.substring(0, 1).toUpperCase() + userInput.substring(1);
         System.out.println("Hello, " + userName);
-        round.userName = userInput;
+        round.userName = userName;
         round.returnPlayer(userName);
     }
 
