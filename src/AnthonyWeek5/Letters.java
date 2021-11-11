@@ -55,7 +55,7 @@ public class Letters extends JPanel {
     }
 
     public static void availableLetters(String stateName){
-        System.out.println("Its working; your state is: " + stateName);
+//        System.out.println("Its working; your state is: " + stateName);
         JLabel A = new JLabel("<html><span style='font-size:20px'>"+"A"+"</span></html>");
         dynamicLetters.add(A);
         sortedLabels[0] = A;

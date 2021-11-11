@@ -58,7 +58,6 @@ public class Round {
             System.out.println();
 
             System.out.println("Guess a letter.");
-            System.out.println("The secret word is: " + secretWord);
             try {
                 usersGuess = scanner.nextLine();
             }catch(Exception e){
