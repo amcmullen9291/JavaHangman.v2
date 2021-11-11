@@ -164,8 +164,16 @@ public class Round {
     public static void saveUserScore() throws IOException {
         int wordLength = HangMan2.line32.length();
        int roundScore = wordLength*50;
+       try{
+           BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
+           score = Integer.parseInt(getScore.readLine());
+           score+= roundScore;
+           getScore.close();
+       }catch(IOException e){
+
+       }
        score += roundScore;
-       System.out.println("Points this round: " + score);
+       System.out.println("Points this round: " + roundScore);
        try{
            BufferedWriter recordScore = new BufferedWriter(new FileWriter("src/AnthonyWeek5/HighScore.txt"));
            recordScore.write(String.valueOf(score));
@@ -181,14 +189,14 @@ public class Round {
             BufferedReader currentGamesWon = new BufferedReader(new FileReader("src/AnthonyWeek5/GamesWon.txt"));
             int currentTotal = Integer.parseInt(currentGamesWon.readLine());
             gamesWon = currentTotal+1;
-                System.out.println("Current streak: " + gamesWon);
+                System.out.println("Current streak: " + (currentTotal+1));
                 currentGamesWon.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
         }
         try{
             BufferedWriter recordStreak = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
-            recordStreak.write(String.valueOf(gamesWon));
+            recordStreak.write(String.valueOf(gamesWon+1));
             recordStreak.close();
         }catch (IOException e){
             e.printStackTrace();
