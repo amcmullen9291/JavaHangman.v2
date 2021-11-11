@@ -129,18 +129,11 @@ public class Round {
             }
             if (lives == 0) {
                 System.out.println("Out of guesses.");
+                System.exit(0);
             }
-//            System.out.println("Exiting Hangman...");
         }
     }
     public static void saveUserScore(int currentScore) throws IOException {
-        BufferedWriter saveGame = new BufferedWriter(new FileWriter("src/AnthonyWeek5/HighScore.txt"));
-        System.out.println("Saving Progress");
-        try {
-            saveGame.write(userName);
-            saveGame.close();
-        }catch(IOException e){
-            e.printStackTrace();
+        System.out.println("placeholder");
         }
     }
-}
