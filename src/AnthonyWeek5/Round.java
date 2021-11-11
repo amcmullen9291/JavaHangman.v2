@@ -23,7 +23,7 @@ public class Round {
     public static void returnPlayer(String userNamed){
         userName = userNamed;
         System.out.println("checking the GuestBooks ... " );
-        File file = new File("AnthonyWeek5/HighScore.txt");
+        File file = new File("src/AnthonyWeek5/HighScore.txt");
         try{
             String cachedName = String.valueOf(Files.readAllLines(Paths.get("src/AnthonyWeek5/UserName.txt")));
             if(userNamed == cachedName){
