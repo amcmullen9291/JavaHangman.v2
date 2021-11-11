@@ -166,17 +166,19 @@ public class Round {
        int roundScore = wordLength*50;
        try{
            BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
-           score = Integer.parseInt(getScore.readLine());
+           int scored = Integer.parseInt(getScore.readLine());
+           score = scored;
            score+= roundScore;
            getScore.close();
+           System.out.println("Total Points: " + (score+roundScore));
        }catch(IOException e){
 
        }
-       score += roundScore;
+//       score += roundScore;
        System.out.println("Points this round: " + roundScore);
        try{
            BufferedWriter recordScore = new BufferedWriter(new FileWriter("src/AnthonyWeek5/HighScore.txt"));
-           recordScore.write(String.valueOf(score));
+           recordScore.write(String.valueOf(score+roundScore));
            recordScore.close();
        }catch(IOException e){
            e.printStackTrace();
@@ -188,7 +190,8 @@ public class Round {
         try{
             BufferedReader currentGamesWon = new BufferedReader(new FileReader("src/AnthonyWeek5/GamesWon.txt"));
             int currentTotal = Integer.parseInt(currentGamesWon.readLine());
-            gamesWon = currentTotal+1;
+            int gamesWonSoFar = currentTotal+1;
+            gamesWon = gamesWonSoFar;
                 System.out.println("Current streak: " + (gamesWon));
                 currentGamesWon.close();
             } catch (FileNotFoundException e) {
