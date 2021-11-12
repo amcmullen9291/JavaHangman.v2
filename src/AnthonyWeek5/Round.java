@@ -160,7 +160,6 @@ public class Round {
     public static void saveUserScore() throws IOException {
         int wordLength = HangMan2.line32.length();
        int roundScore = wordLength*50;
-        System.out.println("Printing from end method");
         String stringNewTotal = "";
         try {
             BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
@@ -181,22 +180,29 @@ public class Round {
         }catch(IOException e){
             e.printStackTrace();
         }
+        totalGamesWon();
     }
 
     public static void totalGamesWon() throws IOException {
+        String winningStreakString = "";
         try{
-            BufferedReader currentGamesWon = new BufferedReader(new FileReader("src/AnthonyWeek5/GamesWon.txt"));
-            int currentGamesCount = Integer.parseInt(currentGamesWon.readLine());
-            int newGamesWonTotal = ++currentGamesCount;
-//            System.out.println(currentGamesCount + " , the OriginalValue");
-//            System.out.println("total being recorded: " + ++newGamesWonTotal);
-//            System.out.println("Current streak: " + newGamesWonTotal);
-            currentGamesWon.close();
-            BufferedWriter recordStreak = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
-            recordStreak.write(String.valueOf(newGamesWonTotal));
-            recordStreak.close();
-        } catch (FileNotFoundException e) {
+            BufferedReader getGames = new BufferedReader(new FileReader("src/AnthonyWeek5/GamesWon.txt"));
+            int gamesGotten = Integer.parseInt(getGames.readLine());
+            System.out.println("===============");
+            gamesGotten+=1;
+            System.out.println("Current Winning Streak: " + gamesGotten);
+            winningStreakString = String.valueOf(gamesGotten);
+            getGames.close();
+        }catch(IOException e){
             e.printStackTrace();
         }
+        try{
+            BufferedWriter setWinningStreak = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
+            setWinningStreak.write(winningStreakString);
+            setWinningStreak.close();
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+
     }
 }
