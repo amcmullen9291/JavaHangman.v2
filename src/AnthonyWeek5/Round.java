@@ -4,6 +4,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,32 +29,23 @@ public class Round {
         System.out.println("checking the GuestBooks ... " );
         File file = new File("src/AnthonyWeek5/HighScore.txt");
         try{
-            String cachedName = String.valueOf(Files.readAllLines(Paths.get("src/AnthonyWeek5/UserName.txt")));
-            if(userNamed == cachedName){
-                try{
-                    BufferedReader scoreReader = new BufferedReader(new FileReader(file));
-                    if (scoreReader.readLine() != null) {
-                        score = Integer.parseInt(scoreReader.readLine());
-                        scoreReader.close();
-                    }else{
-                        score = 0;
-                    }
-                }catch(IOException e){
-                    e.printStackTrace();
-                }
-            }else{
+            List cachedName = Files.readAllLines(Paths.get("src/AnthonyWeek5/UserName.txt"));
+//            System.out.println(cachedName.get(0));
+//            System.out.println(cachedName.getClass().getSimpleName());
+//            System.out.println(userNamed);
+            String name = (String) cachedName.get(0);
+            if(!name.equals(userNamed)){
                 try{
                     BufferedWriter resetScore = new BufferedWriter(new FileWriter(file));
-                    resetScore.write("0");
+                    resetScore.write(0);
                     resetScore.close();
                 }catch(IOException e){
                     e.printStackTrace();
                 }
                 try{
                     BufferedWriter resetGamesTotal = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
-                    resetGamesTotal.write("0");
+                    resetGamesTotal.write(0);
                     resetGamesTotal.close();
-                    gamesWon = 0;
                 }catch(IOException e){
                     e.printStackTrace();
                 }
@@ -170,8 +162,8 @@ public class Round {
        int roundScore = wordLength*50;
        try{
            BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
-           int currentScore = Integer.parseInt(getScore.readLine());
-           int newScore = currentScore + roundScore;
+           System.out.print("Current score: " + Integer.parseInt(String.valueOf(getScore.read())));
+//           int newScore = currentScore + roundScore;
            System.out.println("Points this round: " + roundScore);
            System.out.println("Total Points: " + newScore);
             getScore.close();
@@ -181,7 +173,6 @@ public class Round {
        }catch(IOException e){
             e.printStackTrace();
        }
-        totalGamesWon();
     }
 
     public static void totalGamesWon() throws IOException {
