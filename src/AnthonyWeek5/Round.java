@@ -37,14 +37,14 @@ public class Round {
             if(!name.equals(userNamed)){
                 try{
                     BufferedWriter resetScore = new BufferedWriter(new FileWriter(file));
-                    resetScore.write(0);
+                    resetScore.write(String.valueOf(0));
                     resetScore.close();
                 }catch(IOException e){
                     e.printStackTrace();
                 }
                 try{
                     BufferedWriter resetGamesTotal = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
-                    resetGamesTotal.write(0);
+                    resetGamesTotal.write(String.valueOf(0));
                     resetGamesTotal.close();
                 }catch(IOException e){
                     e.printStackTrace();
@@ -161,6 +161,7 @@ public class Round {
         int wordLength = HangMan2.line32.length();
        int roundScore = wordLength*50;
         System.out.println("Printing from end method");
+        String stringNewTotal = "";
         try {
             BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
             int scoreGotten = Integer.parseInt(getScore.readLine());
@@ -168,10 +169,19 @@ public class Round {
             System.out.println("Points This Round: " + roundScore);
             int newTotal = scoreGotten+roundScore;
             System.out.println("New Total Points: " + newTotal);
+            stringNewTotal = String.valueOf(newTotal);
+            getScore.close();
         }catch(IOException e){
             e.printStackTrace();
         }
+        try{
+            BufferedWriter setScore = new BufferedWriter(new FileWriter("src/AnthonyWeek5/HighScore.txt"));
+            setScore.write(stringNewTotal);
+            setScore.close();
+        }catch(IOException e){
+            e.printStackTrace();
         }
+    }
 
     public static void totalGamesWon() throws IOException {
         try{
