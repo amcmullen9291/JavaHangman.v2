@@ -157,7 +157,7 @@ public class Round {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("Error loading... ");
+                System.exit(0);
             }
             if (lives == 0) {
                 System.out.println("Out of guesses.");
@@ -170,40 +170,33 @@ public class Round {
        int roundScore = wordLength*50;
        try{
            BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
-           score = Integer.parseInt(getScore.readLine());
-           newScore = roundScore;
-           getScore.close();
-           System.out.println("Total Points: " + Integer.valueOf(score+newScore));
-       }catch(IOException e){
-
-       }
-//       score += roundScore;
-       System.out.println("Points this round: " + roundScore);
-       try{
+           int currentScore = Integer.parseInt(getScore.readLine());
+           int newScore = currentScore + roundScore;
+           System.out.println("Points this round: " + roundScore);
+           System.out.println("Total Points: " + newScore);
+            getScore.close();
            BufferedWriter recordScore = new BufferedWriter(new FileWriter("src/AnthonyWeek5/HighScore.txt"));
-           recordScore.write(String.valueOf(newScore+score));
+           recordScore.write(String.valueOf(newScore));
            recordScore.close();
        }catch(IOException e){
-           e.printStackTrace();
+            e.printStackTrace();
        }
         totalGamesWon();
-        }
+    }
 
     public static void totalGamesWon() throws IOException {
         try{
             BufferedReader currentGamesWon = new BufferedReader(new FileReader("src/AnthonyWeek5/GamesWon.txt"));
-            gamesWon = Integer.parseInt(currentGamesWon.readLine());
-            newGamesWonTotal =1;
-                System.out.println("Current streak: " + Integer.valueOf(newGamesWonTotal+gamesWon));
-                currentGamesWon.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-        }
-        try{
+            int currentGamesCount = Integer.parseInt(currentGamesWon.readLine());
+            int newGamesWonTotal = ++currentGamesCount;
+//            System.out.println(currentGamesCount + " , the OriginalValue");
+//            System.out.println("total being recorded: " + ++newGamesWonTotal);
+//            System.out.println("Current streak: " + newGamesWonTotal);
+            currentGamesWon.close();
             BufferedWriter recordStreak = new BufferedWriter(new FileWriter("src/AnthonyWeek5/GamesWon.txt"));
-            recordStreak.write(String.valueOf(newGamesWonTotal+gamesWon));
+            recordStreak.write(String.valueOf(newGamesWonTotal));
             recordStreak.close();
-        }catch (IOException e){
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
