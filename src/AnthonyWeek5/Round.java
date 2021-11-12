@@ -160,20 +160,18 @@ public class Round {
     public static void saveUserScore() throws IOException {
         int wordLength = HangMan2.line32.length();
        int roundScore = wordLength*50;
-       try{
-           BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
-           System.out.print("Current score: " + Integer.parseInt(String.valueOf(getScore.read())));
-//           int newScore = currentScore + roundScore;
-           System.out.println("Points this round: " + roundScore);
-           System.out.println("Total Points: " + newScore);
-            getScore.close();
-           BufferedWriter recordScore = new BufferedWriter(new FileWriter("src/AnthonyWeek5/HighScore.txt"));
-           recordScore.write(String.valueOf(newScore));
-           recordScore.close();
-       }catch(IOException e){
+        System.out.println("Printing from end method");
+        try {
+            BufferedReader getScore = new BufferedReader(new FileReader("src/AnthonyWeek5/HighScore.txt"));
+            int scoreGotten = Integer.parseInt(getScore.readLine());
+            System.out.println("Current Total Points: " + scoreGotten);
+            System.out.println("Points This Round: " + roundScore);
+            int newTotal = scoreGotten+roundScore;
+            System.out.println("New Total Points: " + newTotal);
+        }catch(IOException e){
             e.printStackTrace();
-       }
-    }
+        }
+        }
 
     public static void totalGamesWon() throws IOException {
         try{
